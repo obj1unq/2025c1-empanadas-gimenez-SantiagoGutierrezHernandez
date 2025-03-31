@@ -9,21 +9,21 @@ object galvan {
 
     method cobrar(){
         if (sueldo >= deuda){
-            dinero = dinero + sueldo - deuda
+            dinero += sueldo - deuda
             deuda = 0
         }
         else{
-            deuda = deuda - sueldo
+            deuda -= sueldo
         }
         return sueldo
     }
 
     method gastar(cuanto){
         if (dinero >= cuanto){
-            dinero = dinero - cuanto
+            dinero -= cuanto
         }
         else{
-            deuda = deuda + cuanto - dinero
+            deuda += cuanto - dinero
             dinero = 0
         }
     }
@@ -53,13 +53,13 @@ object baigorria {
 
     method cobrar(){
         const porCobrar = self.sueldo()
-        dinero = dinero + porCobrar
+        dinero += porCobrar
         ventas = 0
         return porCobrar
     }
 
     method vender(cantidad){
-        ventas = ventas + cantidad
+        ventas += cantidad
     }
 
     method sueldo(){
@@ -76,7 +76,7 @@ object gimenez {
 
     method pagarSueldo(empleado){
         const pago = empleado.cobrar()
-        fondo = fondo - pago
+        fondo -= pago
         return pago
     }
 
